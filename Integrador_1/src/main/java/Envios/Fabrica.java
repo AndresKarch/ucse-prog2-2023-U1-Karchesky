@@ -5,18 +5,18 @@ import Pagos.Metodo;
 import Pagos.Paypal;
 
 public class Fabrica {
-    public MetodoEnvio crear_metodo_envio(String metodo)
+    public MetodoEnvio crear_metodo_envio(String metodo,Double costoenvio)
     {
         switch (metodo) {
             case "1" -> {
-                return new EnvioAvion();
+                return new EnvioAvion(costoenvio);
             }
             case "2" -> {
-                return new EnvioCamion();
+                return new EnvioCamion(costoenvio);
             }
 
             case "3" -> {
-                return new EnvioBarco();
+                return new EnvioBarco(costoenvio);
             }
             default -> {
                 return null;
